@@ -9,14 +9,14 @@ function Nav() {
     <div>
         <nav>
         <Link style={navStyle} to="/">
-          <h3>Logo</h3>
+          <h3>Public Notes</h3>
         </Link>
             <ul className='nav-links'>
                 <Link style={navStyle} to="/about">
-                    <li>About</li>
+                    <li>Notes</li>
                 </Link>
                 <Link style={navStyle} to="/shop">
-                    <li>Shop</li>
+                    <li>User</li>
                 </Link>    
             </ul>
         </nav>
