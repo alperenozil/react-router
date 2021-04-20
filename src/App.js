@@ -6,6 +6,7 @@ import Home from './Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { firestore } from './firebase';
 function App() {
+  const db=firestore.collection("users").add({name:"alperen"});
   return (
    <Router>
       <div>
@@ -19,12 +20,6 @@ function App() {
     </div>
    </Router>
   );
-}
-
-componentDidMount=()=> {
-  const posts=firestore.collection('posts').get().then(snapshot=>{
-    console.log({snapshot});
-  });
 }
 
 export default App;
