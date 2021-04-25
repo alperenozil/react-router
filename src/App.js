@@ -12,26 +12,25 @@ function App() {
     fetchBlogs();
   }, [])
   const fetchBlogs=async()=>{
-    const response=firestore.collection('users');
+    const response=firestore.collection('notes');
     const data=await response.get();
     data.docs.forEach(item=>{
-      console.log({item});
-      //setBlogs([...blogs,item.data()])
+      setBlogs([...blogs,item.data()])
      })
   }
   
   return (
-   <Router>
-      <div>
-        <Nav/>
-        <Switch>
-          <Route path="/" exact component={Home}/>
-          <Route path="/about" component={About}/>
-          <Route path="/shop" component={Shop}/>
-          <Route path="/:id" children={<Child />} />
-        </Switch>
+    <div className="App">
+      {
+        blogs && blogs.map(blog=>{
+          return(
+            <div >
+              <h4>{blog.note}</h4>
+            </div>
+          )
+        })
+      }
     </div>
-   </Router>
   );
 }
 
