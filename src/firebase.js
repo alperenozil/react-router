@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
-
+import 'firebase/firestore'
 const firebaseConfig = {
-    apiKey: "selamkenksoIJcqX5efIzC6T8",
+    apiKey: "pS9OoIJcqX5efIzC6T8",
     authDomain: "public-notes-f0fcc.firebaseapp.com",
     projectId: "public-notes-f0fcc",
     storageBucket: "public-notes-f0fcc.appspot.com",
@@ -11,5 +11,8 @@ const firebaseConfig = {
   };
 
 firebase.initializeApp(firebaseConfig);
+export const firestore=firebase.firestore();
+const settings = { timestampsInSnapshots: true }
+firestore.settings(settings);
 window.firebase=firebase;
 export default firebase;
