@@ -3,10 +3,23 @@ import Nav from './Nav';
 import About from './About';
 import Shop from './Shop';
 import Home from './Home';
+import React,{useState,useEffect} from 'react';
 import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-dom';
 import { firestore } from './firebase';
 function App() {
-  //const db=firestore.collection("users").add({name:"alperen"});
+  const [blogs,setBlogs]=useState([])
+  useEffect(() => {
+    fetchBlogs();
+  }, [])
+  const fetchBlogs=async()=>{
+    const response=firestore.collection('users');
+    const data=await response.get();
+    data.docs.forEach(item=>{
+      console.log({item});
+      //setBlogs([...blogs,item.data()])
+     })
+  }
+  
   return (
    <Router>
       <div>
@@ -33,5 +46,7 @@ function Child() {
     </div>
   );
 }
+
+
 
 export default App;
