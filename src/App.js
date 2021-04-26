@@ -16,7 +16,7 @@ function App() {
     const data=await response.get();
     data.docs.forEach(item=>{
       setBlogs([...blogs,item.data()])
-     })
+    })
   }
   
   return (
@@ -24,9 +24,9 @@ function App() {
       {
         blogs && blogs.map(blog=>{
           return(
-            <div >
-              <h4>{blog.note}</h4>
-            </div>
+            <ul key={blog.note}>
+                <li>{blog.note}</li>
+            </ul>
           )
         })
       }
