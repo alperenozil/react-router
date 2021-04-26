@@ -14,9 +14,10 @@ function App() {
   const fetchBlogs=async()=>{
     const response=firestore.collection('notes');
     const data=await response.get();
-    data.docs.forEach(item=>{
-      setBlogs([...blogs,item.data()])
+    const posts=data.docs.map(item=>{
+      return {id: item.id, ...item.data()}
     })
+    setBlogs([...posts])
   }
   
   return (
