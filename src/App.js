@@ -21,18 +21,35 @@ function App() {
   }
   
   return (
-    <div className="App">
-      {
-        blogs && blogs.map(blog=>{
-          return(
-            <ul key={blog.note}>
-                <li>{blog.note}</li>
-            </ul>
-          )
-        })
-      }
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/:id">
+          <BlogPost />
+        </Route>
+      </Switch>
+    </Router>
+    
+    // <div className="App">
+    //   {
+    //     blogs && blogs.map(blog=>{
+    //       return(
+    //         <ul key={blog.note}>
+    //             <li>{blog.note}</li>
+    //         </ul>
+    //       )
+    //     })
+    //   }
+    // </div>
   );
+}
+
+function BlogPost() {
+  let { id } = useParams();
+  if (id.length<10) return <div>Now showing less than 10 {id}</div>;
+  if (id.length>10) return <div>Now showing bigger than 10 {id}</div>;
 }
 
 function Child() {
