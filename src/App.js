@@ -11,9 +11,8 @@ function App() {
   useEffect(() => {
     fetchBlogs();
   }, [])
-  let { id } = useParams();
   const fetchBlogs=async()=>{
-    const response=firestore.collection(id);
+    const response=firestore.collection('notes');
     const data=await response.get();
     const posts=data.docs.map(item=>{
       return {id: item.id, ...item.data()}
@@ -25,9 +24,7 @@ function App() {
       {
         blogs && blogs.map(blog=>{
           return(
-            <ul key={blog.note}>
-                <li>{blog.note}</li>
-            </ul>
+            <Shop></Shop>
           )
         })
       }
