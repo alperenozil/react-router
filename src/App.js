@@ -8,11 +8,12 @@ import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-
 import { firestore } from './firebase';
 function App() {
   const [blogs,setBlogs]=useState([])
+  const { amele } = useParams();
   useEffect(() => {
-    fetchBlogs();
+    fetchBlogs(amele);
   }, [])
-  const fetchBlogs=async()=>{
-    const response=firestore.collection('notes');
+  const fetchBlogs=async(amele)=>{
+    const response=firestore.collection(amele);
     const data=await response.get();
     const posts=data.docs.map(item=>{
       return {id: item.id, ...item.data()}
@@ -20,25 +21,25 @@ function App() {
     setBlogs([...posts])
   }
   return (
-    <Router>
+    /* <Router>
       <Switch>
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/:id" component={Shop}>
+        <Route path="/:id" component={Shop} dataFromParent = {amele}>
         </Route>
       </Switch>
-    </Router>
+    </Router> */
 
-   /*  <div className="App">
+    <div className="App">
       {
         blogs && blogs.map(blog=>{
           return(
-            <Shop></Shop>
+            <h3>{blog.note}</h3>
           )
         })
       }
-    </div> */
+    </div>
 
   );
 }
