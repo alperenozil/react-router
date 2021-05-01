@@ -20,7 +20,17 @@ function App() {
     setBlogs([...posts])
   }
   return (
-    <div className="App">
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/:id" component={Shop}>
+        </Route>
+      </Switch>
+    </Router>
+
+   /*  <div className="App">
       {
         blogs && blogs.map(blog=>{
           return(
@@ -28,7 +38,8 @@ function App() {
           )
         })
       }
-    </div>
+    </div> */
+
   );
 }
 
