@@ -1,11 +1,14 @@
 import './App.css';
-
-function Shop() {
-  return (
-    <div>
-      <h1>Shop Page</h1>
-    </div>
-  );
+import React,{useState,useEffect} from 'react';
+export default class Shop extends React.Component {
+  render() {
+    return(
+      <div>
+        <h1>Shop</h1>
+        <h2>{this.props.match.params.id}</h2>
+      </div>
+    )
+  }
 }
 
-export default Shop;
+//export default Shop;
