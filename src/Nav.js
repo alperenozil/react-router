@@ -1,13 +1,17 @@
 import './App.css';
 import { Link } from 'react-router-dom';
+import {useParams} from "react-router-dom";
+
 
 function Nav() {
-    const navStyle={
-        color:"white"
-    }
+const navStyle={
+    color:"white"
+}
+const { id } = useParams();
+console.log(id);
   return (
     <div>
-        <nav>
+        {/* <nav>
         <Link style={navStyle} to="/">
           <h3>Public Notes</h3>
         </Link>
@@ -19,7 +23,7 @@ function Nav() {
                     <li>User</li>
                 </Link>    
             </ul>
-        </nav>
+        </nav> */}
     </div>
   );
 }
