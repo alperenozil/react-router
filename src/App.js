@@ -21,7 +21,7 @@ function App() {
     setBlogs([...posts])
   }
   return (
-    /* <Router>
+    <Router>
       <Switch>
         <Route exact path="/">
           <Home />
@@ -29,7 +29,7 @@ function App() {
         <Route path="/:id" component={Shop} dataFromParent = {amele}>
         </Route>
       </Switch>
-    </Router> */
+    </Router>
 
     <div className="App">
       {
