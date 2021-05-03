@@ -10,11 +10,10 @@ function App() {
   const [blogs,setBlogs]=useState([])
   
   useEffect(() => {
-    fetchBlogs(useParams());
+    fetchBlogs();
   }, [])
-  const fetchBlogs=async(something)=>{
-    const response=firestore.collection(something);
-    console.log(something)
+  const fetchBlogs=async()=>{
+    const response=firestore.collection('notes');
     const data=await response.get();
     const posts=data.docs.map(item=>{
       return {id: item.id, ...item.data()}
@@ -33,6 +32,7 @@ function App() {
     </Router>
     */
     <div className="App">
+      <Nav></Nav>
       {
         blogs && blogs.map(blog=>{
           return(
@@ -44,5 +44,4 @@ function App() {
 
   );
 }
-
 export default App;
