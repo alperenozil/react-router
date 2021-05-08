@@ -21,16 +21,7 @@ function App() {
     setBlogs([...posts])
   }
   return (
-    /* <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/:id" component={Shop} dataFromParent = {amele}>
-        </Route>
-      </Switch>
-    </Router>
-    */
+   
     <div className="App">
       <Nav></Nav>
       {
