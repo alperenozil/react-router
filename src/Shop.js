@@ -1,14 +1,15 @@
 import './App.css';
 import React,{useState,useEffect} from 'react';
-export default class Shop extends React.Component {
-  render() {
+import { useParams } from 'react-router';
+function Shop() {
+  const { id } = useParams();
     return(
       <div>
         <h1>Shop</h1>
-        <h2>{this.props.match.params.id}</h2>
+        <h2>{id}</h2>
       </div>
     )
-  }
+
 }
 
-//export default Shop;
+export default Shop;
