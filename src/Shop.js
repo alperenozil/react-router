@@ -8,10 +8,9 @@ function Shop({location}) {
   const { id } = useParams();
   const response=firestore.collection(id);
   useEffect(() => {  
-    fetchBlogs('notes');
+    fetchBlogs();
   }, [])
-  const fetchBlogs=async(name)=>{
-    console.log(name)
+  const fetchBlogs=async()=>{
     const data=await response.get();
     const posts=data.docs.map(item=>{
       return {id: item.id, ...item.data()}
