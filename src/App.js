@@ -10,11 +10,11 @@ function App() {
   const [blogs,setBlogs]=useState([])
   
   useEffect(() => {
-    fetchBlogs('alperen');
+    fetchBlogs('notes');
   }, [])
   const fetchBlogs=async(name)=>{
     console.log(name)
-    const response=firestore.collection('notes');
+    const response=firestore.collection(name);
     const data=await response.get();
     const posts=data.docs.map(item=>{
       return {id: item.id, ...item.data()}
