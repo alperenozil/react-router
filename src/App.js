@@ -8,12 +8,12 @@ import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-
 import { firestore } from './firebase';
 function App() {
   const [blogs,setBlogs]=useState([])
-  
+  const { id } = useParams();
   useEffect(() => {
     fetchBlogs();
   }, [])
   const fetchBlogs=async()=>{
-    const response=firestore.collection('notes');
+    const response=firestore.collection('notes').doc({id});
     const data=await response.get();
     const posts=data.docs.map(item=>{
       return {id: item.id, ...item.data()}
