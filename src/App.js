@@ -13,7 +13,7 @@ function App() {
     fetchBlogs();
   }, [])
   const fetchBlogs=async()=>{
-    const response=firestore.collection('notes').doc(useParams);
+    const response=firestore.collection('notes');
     const data=await response.get();
     const posts=data.docs.map(item=>{
       return {id: item.id, ...item.data()}
@@ -21,17 +21,17 @@ function App() {
     setBlogs([...posts])
   }
   return (
-    /* <Router>
+    <Router>
       <Switch>
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/:id" component={Shop} dataFromParent = {amele}>
+        <Route path="/:id" component={Shop}>
         </Route>
       </Switch>
     </Router>
-    */
-    <div className="App">
+
+    /* <div className="App">
       {
         blogs && blogs.map(blog=>{
           return(
@@ -39,7 +39,7 @@ function App() {
           )
         })
       }
-    </div>
+    </div> */
 
   );
 }
