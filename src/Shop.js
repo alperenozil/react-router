@@ -5,7 +5,8 @@ export default class Shop extends React.Component {
     return(
       <div>
         <h1>Shop</h1>
-        
+        {/* <h2>{this.props.match.params.id}</h2>
+        <h3>{this.props.dataFromParent}</h3> */}
       </div>
     )
   }
