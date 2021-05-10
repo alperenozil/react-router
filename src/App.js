@@ -19,19 +19,6 @@ function App() {
         </Route>
       </Switch>
     </Router>
-    
-    /*
-    <div className="App">
-      {
-        blogs && blogs.map(blog=>{
-          return(
-            <h3>{blog.note}</h3>
-          )
-        })
-      }
-    </div>
-    */
-
   );
 }
 export default App;
