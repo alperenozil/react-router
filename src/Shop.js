@@ -18,17 +18,15 @@ function Shop({location}) {
     setBlogs([...posts])
   }
     return(
-      <div>
-        <div className="App">
+        <div>
           {
             blogs && blogs.map(blog=>{
               return(
-                <h3>{blog.note}</h3>
+                <h3 className="App">{blog.note}</h3>
               )
             })
           }
         </div>
-      </div>
     )
 
 }
