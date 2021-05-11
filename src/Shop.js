@@ -19,8 +19,6 @@ function Shop({location}) {
   }
     return(
       <div>
-        <h1>Shop</h1>
-        <h2>{id}</h2>
         <div className="App">
           {
             blogs && blogs.map(blog=>{
