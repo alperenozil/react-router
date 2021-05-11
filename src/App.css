@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: #d3d3d3;
 }
 nav {
   display: flex;
