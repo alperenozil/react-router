@@ -22,7 +22,10 @@ function Shop({location}) {
           {
             blogs && blogs.map(blog=>{
               return(
-                <h3 className="App">{blog.note}</h3>
+                <div className="App">
+                  <h3>{blog.note}</h3>
+                  <p>{blog.detail}</p>
+                </div>
               )
             })
           }
