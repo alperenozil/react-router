@@ -7,8 +7,6 @@ import React,{useState,useEffect} from 'react';
 import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-dom';
 import { firestore } from './firebase';
 function App() {
-  
-  
   return (
     <Router>
       <Switch>
