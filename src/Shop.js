@@ -18,7 +18,7 @@ function Shop({location}) {
     setBlogs([...posts])
   }
     return(
-        <div>
+        <div className="margin">
           {
             blogs && blogs.map(blog=>{
               return(
