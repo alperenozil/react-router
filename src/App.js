@@ -1,11 +1,8 @@
 import './App.css';
-import Nav from './Nav';
-import About from './About';
 import Shop from './Shop';
 import Home from './Home';
-import React,{useState,useEffect} from 'react';
-import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-dom';
-import { firestore } from './firebase';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   return (
     <Router>
