@@ -8,6 +8,7 @@
   border-radius: 8px;
   margin: auto;
   margin-top: 8px;
+  white-space: pre-line;
 }
 .margin {
   margin-left: 8px;
